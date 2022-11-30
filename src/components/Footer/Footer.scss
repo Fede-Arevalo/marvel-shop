@@ -1,0 +1,16 @@
+@import "../../colors.scss";
+
+.footer {
+  span {
+    background-color: $color2;
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
+  }
+}

@@ -7,3 +7,12 @@ const Products = () => {
 }
 
 export default Products
+
+
+// {
+//   name: DataTypes.STRING,
+//   price: DataTypes.FLOAT,
+//   description: DataTypes.STRING,
+//   img_product: DataTypes.STRING,
+//   category_id: DataTypes.INTEGER,
+// }
