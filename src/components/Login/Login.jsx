@@ -18,7 +18,7 @@ const Login = () => {
             navigate("/profile")
         }
 
-    })
+    },[login])
 
     return (
         <Form
