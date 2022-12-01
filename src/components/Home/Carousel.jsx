@@ -7,7 +7,6 @@ const contentStyle = {
   lineHeight: '360px',
   textAlign: 'center',
   background: '#364d79',
-  marginTop: "70px"
 };
 
 const CarouselHome = () => (

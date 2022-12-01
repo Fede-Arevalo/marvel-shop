@@ -32,16 +32,18 @@
 
 // function App() {
 //   return <div className="App">
-    
+
 //   </div>;
 // =======
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.scss";
+import Home from "./components/Home/Home";
+import Header from "./components/Header/Header";
+import Login from "./components/Login/Login";
+import Profile from "./components/Profile/Profile";
+import Footer from "./components/Footer/Footer";
 
-import Home from './components/Home/Home';
-import Header from './components/Header/Header';
-import Login from './components/Login/Login';
-import Profile from './components/Profile/Profile';
-import { UserProvider } from './context/UserContext/UserState';
+import { UserProvider } from "./context/UserContext/UserState";
 
 function App() {
   return (
@@ -55,10 +57,10 @@ function App() {
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </UserProvider>
+      <Footer />
       </BrowserRouter>
     </div>
   );
 }
-
 
 export default App;
