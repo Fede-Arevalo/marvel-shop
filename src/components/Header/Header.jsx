@@ -28,8 +28,8 @@ import { Menu } from "antd";
 import {
   HomeOutlined,
   UserOutlined,
-  UserAddOutlined,
-  LogoutOutlined,
+  FrownOutlined,
+  SmileOutlined,
 } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -51,12 +51,12 @@ const Header = () => {
           <Menu.Item key="profile" icon={<UserOutlined />}>
             <Link to="/profile">Profile</Link>
           </Menu.Item>
-          <Menu.Item key="logout" icon={<LogoutOutlined />} onClick={onLogout}>
+          <Menu.Item key="logout" icon={<FrownOutlined />} onClick={onLogout}>
             <Link to="/logout">Logout</Link>
           </Menu.Item>
         </>
       ) : (
-        <Menu.Item key="login" icon={<UserAddOutlined />}>
+        <Menu.Item key="login" icon={<SmileOutlined />}>
           <Link to="/login">Login</Link>
         </Menu.Item>
       )}

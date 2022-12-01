@@ -18,6 +18,8 @@ const Login = () => {
     }
   },[login,navigate]);
 
+   
+
   return (
     <Form
       name="normal_login"
@@ -74,6 +76,8 @@ const Login = () => {
       </Form.Item>
     </Form>
   );
-};
+}
+    
+    
 
 export default Login;
