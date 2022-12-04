@@ -1,9 +1,10 @@
 import React from 'react'
 import CarouselHome from './Carousel'
+import '../Home/Home.scss'
 
 const Home = () => {
   return (
-    <div> 
+    <div className='Home'> 
     <CarouselHome/>
     </div>
   )

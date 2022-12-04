@@ -1,28 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import "./Header.scss";
-// // import Logo from "../Header/logo-white.png";
-
-// const Header = () => {
-//   return (
-//     <>
-//       <div className="header">
-//         <div className="menu">
-//           <span>MARVEL-SHOP™</span>
-//           <nav>
-//             <Link to="/">Home</Link>
-//             <Link to="/login">Login</Link>
-//             <Link to="/register">Register</Link>
-//             <Link to="/profile">Profile</Link>
-//             <Link to="/cart">Cart</Link>
-//           </nav>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Header;
 import React, { useContext } from "react";
 import { Menu } from "antd";
 import {
@@ -30,10 +5,14 @@ import {
   UserOutlined,
   FrownOutlined,
   SmileOutlined,
+  ShoppingCartOutlined,
+  UserAddOutlined,
 } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
-
 import { UserContext } from "../../context/UserContext/UserState";
+import '../Header/Header.scss'
+
+
 const Header = () => {
   const { token, logout } = useContext(UserContext);
   const navigate = useNavigate();
@@ -51,15 +30,24 @@ const Header = () => {
           <Menu.Item key="profile" icon={<UserOutlined />}>
             <Link to="/profile">Profile</Link>
           </Menu.Item>
+          <Menu.Item key="cart" icon={<ShoppingCartOutlined />}>
+            <Link to="/profile">Cart</Link>
+          </Menu.Item>
           <Menu.Item key="logout" icon={<FrownOutlined />} onClick={onLogout}>
             <Link to="/logout">Logout</Link>
           </Menu.Item>
         </>
       ) : (
+        <>
         <Menu.Item key="login" icon={<SmileOutlined />}>
           <Link to="/login">Login</Link>
         </Menu.Item>
+        <Menu.Item key="registrer" icon={<UserAddOutlined />}>
+        <Link to="/registrer">Registrer</Link>
+      </Menu.Item>
+      </>
       )}
+       
     </Menu>
   );
 };
