@@ -11,8 +11,7 @@ import {
 } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
-import '../Header/Header.scss'
-
+import "../Header/Header.scss";
 
 const Header = () => {
   const { token, logout } = useContext(UserContext);
@@ -27,9 +26,9 @@ const Header = () => {
         <Link to="/">Home</Link>
       </Menu.Item>
       <Menu.Item key="products" icon={<ShopOutlined />}>
-            <Link to="/products">Products</Link>
-          </Menu.Item>
-      
+        <Link to="/products">Products</Link>
+      </Menu.Item>
+
       {token ? (
         <>
           <Menu.Item key="profile" icon={<UserOutlined />}>
@@ -44,15 +43,14 @@ const Header = () => {
         </>
       ) : (
         <>
-        <Menu.Item key="login" icon={<SmileOutlined />}>
-          <Link to="/login">Login</Link>
-        </Menu.Item>
-        <Menu.Item key="registrer" icon={<UserAddOutlined />}>
-        <Link to="/registrer">Registrer</Link>
-      </Menu.Item>
-      </>
+          <Menu.Item key="login" icon={<SmileOutlined />}>
+            <Link to="/login">Login</Link>
+          </Menu.Item>
+          <Menu.Item key="registrer" icon={<UserAddOutlined />}>
+            <Link to="/registrer">Registrer</Link>
+          </Menu.Item>
+        </>
       )}
-       
     </Menu>
   );
 };
