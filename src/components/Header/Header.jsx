@@ -1,28 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import "./Header.scss";
-// // import Logo from "../Header/logo-white.png";
-
-// const Header = () => {
-//   return (
-//     <>
-//       <div className="header">
-//         <div className="menu">
-//           <span>MARVEL-SHOP™</span>
-//           <nav>
-//             <Link to="/">Home</Link>
-//             <Link to="/login">Login</Link>
-//             <Link to="/register">Register</Link>
-//             <Link to="/profile">Profile</Link>
-//             <Link to="/cart">Cart</Link>
-//           </nav>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Header;
 import React, { useContext } from "react";
 import { Menu } from "antd";
 import {
@@ -30,6 +5,7 @@ import {
   UserOutlined,
   UserAddOutlined,
   LogoutOutlined,
+  ShopOutlined,
 } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -45,6 +21,9 @@ const Header = () => {
     <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
       <Menu.Item key="home" icon={<HomeOutlined />}>
         <Link to="/">Home</Link>
+      </Menu.Item>
+      <Menu.Item key="products" icon={<ShopOutlined />}>
+        <Link to="/products">Products</Link>
       </Menu.Item>
       {token ? (
         <>
