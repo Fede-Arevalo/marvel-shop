@@ -7,28 +7,30 @@ import Profile from "./components/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
-import Register from "./components/Register/Register"
-
+import Register from "./components/Register/Register";
 
 import { UserProvider } from "./context/UserContext/UserState";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
+import { OrderProvider } from "./context/OrderContext/OrderState";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <UserProvider>
-          <div className='header'>
-          <Header />
-          </div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/products/getProducts" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/Register" element={<Register />} />
-          </Routes>
+          <OrderProvider>
+            <ProductsProvider>
+              <Header />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/Register" element={<Register />} />
+              </Routes>
+            </ProductsProvider>
+          </OrderProvider>
         </UserProvider>
         <Footer />
       </BrowserRouter>

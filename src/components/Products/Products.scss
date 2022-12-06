@@ -1,0 +1,42 @@
+.products {
+  // background-color: blue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .product-container {
+    // background-color: red;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    gap: 20px;
+
+    .ant-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .img-product {
+      img {
+        width: 70%;
+        height: auto;
+        margin: 30px;
+      }
+    }
+
+    .text-container{
+      // background-color: green;
+      height: 160px;
+    }
+
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+}
