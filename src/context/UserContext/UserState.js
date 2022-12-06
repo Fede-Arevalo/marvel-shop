@@ -23,13 +23,14 @@ export const UserProvider = ({ children }) => {
       payload: res.data,
     });
     if (res.data) {
+      console.log(res.data)
       localStorage.setItem("token", JSON.stringify(res.data.token));
     }
   };
 
   const getUserWithOrderById = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    const res = await axios.get(API_URL + "/getUserWithOrderById", {
+    const res = await axios.get(API_URL + "/users/getUserWithOrderById", {
       headers: {
         authorization: token,
       },
@@ -57,6 +58,14 @@ export const UserProvider = ({ children }) => {
     
   };
 
+  const register = async (user) => {
+    const res = await axios.post(API_URL + "/users/createUser", user);
+    dispatch({
+      type: "CREATE_USER",
+      payload: res.data,
+    });
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -64,7 +73,9 @@ export const UserProvider = ({ children }) => {
         user: state.user,
         login,
         getUserWithOrderById,
-        logout
+        logout,
+        register
+
       }}
     >
       {children}

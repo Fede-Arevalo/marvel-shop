@@ -51,8 +51,8 @@ const Header = () => {
         <Menu.Item key="login" icon={<SmileOutlined />}>
           <Link to="/login">Login</Link>
         </Menu.Item>
-        <Menu.Item key="registrer" icon={<UserAddOutlined />}>
-        <Link to="/registrer">Registrer</Link>
+        <Menu.Item key="register" icon={<UserAddOutlined />}>
+        <Link to="/createUser">Register</Link>
       </Menu.Item>
       </>
       )}

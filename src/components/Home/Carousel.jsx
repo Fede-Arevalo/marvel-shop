@@ -18,6 +18,7 @@ const CarouselHome = () => (
     <div className='ft1'>    
       <img src="/assets/4.jpg"  /> 
     </div>
+    
   </Carousel>
 );
 export default CarouselHome;
