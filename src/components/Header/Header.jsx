@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import { Menu } from "antd";
 import {
   HomeOutlined,
@@ -22,37 +23,41 @@ const Header = () => {
     navigate("/");
   };
   return (
+
     <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
       <Menu.Item key="home" icon={<HomeOutlined />}>
         <Link to="/">Home</Link>
       </Menu.Item>
       <Menu.Item key="products" icon={<ShopOutlined />}>
-            <Link to="/products">Products</Link>
-          </Menu.Item>
-      
+        <Link to="/products">Products</Link>
+      </Menu.Item>
+
       {token ? (
         <>
           <Menu.Item key="profile" icon={<UserOutlined />}>
             <Link to="/profile">Profile</Link>
           </Menu.Item>
-          <Menu.Item key="cart" icon={<ShoppingCartOutlined />}>
-            <Link to="/cart">Cart</Link>
-          </Menu.Item>
-          <Menu.Item key="logout" icon={<FrownOutlined />} onClick={onLogout}>
-            <Link to="/logout">Logout</Link>
-          </Menu.Item>
+
+         
+            <Menu.Item key="logout" icon={<FrownOutlined />} onClick={onLogout}>
+              <Link to="/logout">Logout</Link>
+            </Menu.Item>
+            <Menu.Item key="cart" icon={<ShoppingCartOutlined />}>
+              <Link to="/cart">Cart</Link>
+            </Menu.Item>
+          
         </>
       ) : (
         <>
-        <Menu.Item key="login" icon={<SmileOutlined />}>
-          <Link to="/login">Login</Link>
-        </Menu.Item>
-        <Menu.Item key="registrer" icon={<UserAddOutlined />}>
-        <Link to="/registrer">Registrer</Link>
-      </Menu.Item>
-      </>
+          <Menu.Item key="login" icon={<SmileOutlined />}>
+            <Link to="/login">Login</Link>
+          </Menu.Item>
+          <Menu.Item key="register" icon={<UserAddOutlined />}>
+            <Link to="/register">Register</Link>
+          </Menu.Item>
+        </>
       )}
-       
+
     </Menu>
   );
 };
