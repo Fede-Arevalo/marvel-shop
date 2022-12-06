@@ -3,6 +3,7 @@ import { UserContext } from "../../context/UserContext/UserState";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
+import '../Login/Login.scss'
 
 const Login = () => {
   const { login } = useContext(UserContext);
@@ -18,9 +19,11 @@ const Login = () => {
     }
   },[login,navigate]);
 
-   
 
   return (
+<div className="Login">
+  <h1>LOGIN</h1>
+
     <Form
       name="normal_login"
       className="login-form"
@@ -75,6 +78,7 @@ const Login = () => {
         Or <a href="">register now!</a>
       </Form.Item>
     </Form>
+    </div>
   );
 }
     

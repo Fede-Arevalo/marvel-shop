@@ -2,12 +2,11 @@ import axios from "axios";
 import { createContext, useReducer } from "react";
 import ProductsReducer from "./ProductsReducer";
 
-const API_URL = "http://localhost:3001";
-
 const initialState = {
   products: [],
 };
 
+const API_URL = "http://localhost:8080";
 export const ProductsContext = createContext(initialState);
 
 export const ProductsProvider = ({ children }) => {

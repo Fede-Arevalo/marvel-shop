@@ -7,6 +7,8 @@ import Profile from "./components/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import Register from "./components/Register/Register"
+
 
 import { UserProvider } from "./context/UserContext/UserState";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
@@ -16,16 +18,17 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <UserProvider>
-          <ProductsProvider>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-          </ProductsProvider>
+          <div className='header'>
+          <Header />
+          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/products/getProducts" element={<Products />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/Register" element={<Register />} />
+          </Routes>
         </UserProvider>
         <Footer />
       </BrowserRouter>
