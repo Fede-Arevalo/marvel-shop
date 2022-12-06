@@ -10,22 +10,25 @@ import Cart from "./components/Cart/Cart";
 
 import { UserProvider } from "./context/UserContext/UserState";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
+import { OrderProvider } from "./context/OrderContext/OrderState";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <UserProvider>
-          <ProductsProvider>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-          </ProductsProvider>
+          <OrderProvider>
+            <ProductsProvider>
+              <Header />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </ProductsProvider>
+          </OrderProvider>
         </UserProvider>
         <Footer />
       </BrowserRouter>
