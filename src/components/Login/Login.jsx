@@ -3,7 +3,7 @@ import { UserContext } from "../../context/UserContext/UserState";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
-import '../Login/Login.scss'
+import "../Login/Login.scss"
 
 const Login = () => {
   const { login } = useContext(UserContext);
