@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { OrdersContext } from "../../context/OrderContext/OrderState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
+import { Button, Divider, List, Typography } from "antd";
+import { ShoppingOutlined,ClearOutlined } from "@ant-design/icons";
+import "../Cart/Cart.scss";
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductsContext);
@@ -13,8 +16,8 @@ const Cart = () => {
 
   const cartItem = cart.map((cartItem, i) => {
     return (
-      <div className="cart" key={i}>
-        <p>{cartItem.name}</p>
+      <div className="cart-item" key={i}>
+        <h1>{cartItem.name}</h1>
         <p>{cartItem.price.toFixed(2)} €</p>
       </div>
     );
@@ -29,11 +32,31 @@ const Cart = () => {
   }
 
   return (
-    <div>
-      {cartItem}
-      <button onClick={() => clearCart()}>Clear cart</button>
-      <button onClick={() => createNewOrder(cart)}>Create Order</button>
-    </div>
+    <>
+      <Divider orientation="center">
+        <h1>Cart</h1>
+      </Divider>
+      <div className="cart">
+        <div className="cart-container">
+          <List
+            header={<h2>Products Selected</h2>}
+            footer={
+              <div>
+                <Button onClick={() => clearCart()}><ClearOutlined />Clear cart</Button>
+                <Button type="primary" onClick={() => createNewOrder(cart)}><ShoppingOutlined /> Create Order</Button>
+              </div>
+            }
+            bordered
+            dataSource={cartItem}
+            renderItem={(item) => (
+              <List.Item>
+                <Typography.Text mark></Typography.Text> {item}
+              </List.Item>
+            )}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 

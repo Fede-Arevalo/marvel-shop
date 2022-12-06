@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import { Button, Card } from "antd";
+import { Button, Card, Divider } from "antd";
 import "./Products.scss";
 
 const { Meta } = Card;
@@ -50,9 +50,9 @@ const Products = () => {
 
   return (
     <>
-      <h1>Products</h1>
+      <Divider orientation="center"><h1>Products</h1></Divider>
       <div className="products">
-        <div className="product-container">{product}</div>
+        <div className="products-container">{product}</div>
       </div>
     </>
   );
