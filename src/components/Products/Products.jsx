@@ -31,7 +31,7 @@ const Products = () => {
             <div className="img-product">
               <img
                 alt={product.name}
-                src={"http://localhost:3001/" + product.img_product}
+                src={"http://localhost:8080/" + product.img_product}
               />
             </div>
           }
