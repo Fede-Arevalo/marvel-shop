@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -6,41 +6,9 @@ import {
   Input,
   Select,
 } from 'antd';
+import { UserContext } from '../../context/UserContext/UserState';
 const { Option } = Select;
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-];
+
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -72,9 +40,10 @@ const tailFormItemLayout = {
   },
 };
 const Register = () => {
+  const { register } = useContext(UserContext);
   const [form] = Form.useForm();
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    register(values)
   };
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -113,6 +82,8 @@ const Register = () => {
     value: website,
   }));
   return (
+
+
     <Form
       {...formItemLayout}
       form={form}
@@ -126,7 +97,7 @@ const Register = () => {
 
     >
         <Form.Item
-        name="Name"
+        name="name"
         label="Name"
         tooltip="What do you want others to call you?"
         rules={[

@@ -20,14 +20,16 @@ function App() {
         <UserProvider>
           <OrderProvider>
             <ProductsProvider>
+              <div className="header">
               <Header />
+              </div>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/Register" element={<Register />} />
+              <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/createUser" element={<Register />} />
               </Routes>
             </ProductsProvider>
           </OrderProvider>

@@ -52,7 +52,7 @@ const Header = () => {
           <Link to="/login">Login</Link>
         </Menu.Item>
         <Menu.Item key="register" icon={<UserAddOutlined />}>
-        <Link to="/register">Registrer</Link>
+        <Link to="/createUser">Register</Link>
       </Menu.Item>
       </>
       )}

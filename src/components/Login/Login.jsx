@@ -73,9 +73,9 @@ const Login = () => {
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
+          Log in  
         </Button>
-        Or <a href="/">register now!</a>
+        &nbsp;  Or  <span className="linkregi" onClick={ () => navigate("/createUser") }>Register now!</span>
       </Form.Item>
     </Form>
     </div>
