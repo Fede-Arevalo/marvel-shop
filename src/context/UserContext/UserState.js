@@ -7,6 +7,7 @@ const token = JSON.parse(localStorage.getItem("token"));
 const initialState = {
   token: token ? token : null,
   user: null,
+  orders: [],
 };
 
 const API_URL = "http://localhost:8080";
@@ -50,12 +51,11 @@ export const UserProvider = ({ children }) => {
       },
     });
     dispatch({
-        type:"LOGOUT"
-    })
-    if(res.data){
-        localStorage.removeItem("token")
+      type: "LOGOUT",
+    });
+    if (res.data) {
+      localStorage.removeItem("token");
     }
-    
   };
 
   const register = async (user) => {
@@ -71,7 +71,9 @@ export const UserProvider = ({ children }) => {
       value={{
         token: state.token,
         user: state.user,
+        orders: state.orders,
         login,
+        logout,
         getUserWithOrderById,
         logout,
         register
