@@ -16,7 +16,7 @@ const Products = () => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-
+  
   const product = products.map((product) => {
     return (
       <div className="card" key={product.id}>
