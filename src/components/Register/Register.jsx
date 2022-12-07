@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import '../Register/Register.scss'
 import {
   Button,
   Checkbox,
@@ -7,7 +8,6 @@ import {
   Select,
 } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
-const { Option } = Select;
 
 const formItemLayout = {
   labelCol: {
@@ -45,45 +45,12 @@ const Register = () => {
   const onFinish = (values) => {
     register(values)
   };
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
-  const suffixSelector = (
-    <Form.Item name="suffix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="USD">$</Option>
-        <Option value="CNY">¥</Option>
-      </Select>
-    </Form.Item>
-  );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-    }
-  };
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
+  
+
   return (
 
-
+<div className='formregister'>
+<h2>Welcome to Register</h2>
     <Form
       {...formItemLayout}
       form={form}
@@ -186,6 +153,7 @@ const Register = () => {
         </Button>
       </Form.Item>
     </Form>
+    </div>
   );
 };
 export default Register;

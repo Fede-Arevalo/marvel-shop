@@ -23,6 +23,7 @@ export const ProductsProvider = ({ children }) => {
       type: "GET_PRODUCTS",
       payload: res.data,
     });
+    console.log(res.data)
     return res;
   };
 
