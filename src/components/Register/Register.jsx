@@ -8,6 +8,7 @@ import {
   Select,
 } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
+import { useNavigate } from 'react-router-dom';
 
 const formItemLayout = {
   labelCol: {
@@ -41,9 +42,12 @@ const tailFormItemLayout = {
 };
 const Register = () => {
   const { register } = useContext(UserContext);
+  const navigate = useNavigate()
   const [form] = Form.useForm();
   const onFinish = (values) => {
+    console.log('entras')
     register(values)
+    navigate('/login')
   };
   
 
@@ -148,7 +152,7 @@ const Register = () => {
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">
+        <Button  type="primary" htmlType="submit" >
           Register
         </Button>
       </Form.Item>
