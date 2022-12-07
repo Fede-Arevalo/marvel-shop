@@ -14,6 +14,7 @@ const Cart = () => {
     clearCart();
   };
 
+
   const cartItem = cart.map((cartItem, i) => {
     return (
       <div className="cart-item" key={i}>
@@ -31,6 +32,23 @@ const Cart = () => {
     return <span>No tienes ningún producto añadido</span>;
   }
 
+  const list = <List
+  header={<h2>Products Selected</h2>}
+  footer={
+    <div>
+      <Button onClick={() => clearCart()}><ClearOutlined />Clear cart</Button>
+      <Button type="primary" onClick={() => createNewOrder(cart)}><ShoppingOutlined /> Create Order</Button>
+    </div>
+  }
+  bordered
+  dataSource={cartItem}
+  renderItem={(item) => (
+    <List.Item>
+      <Typography.Text mark></Typography.Text> {item}
+    </List.Item>
+  )}
+/>
+
   return (
     <>
       <Divider orientation="center">
@@ -38,7 +56,8 @@ const Cart = () => {
       </Divider>
       <div className="cart">
         <div className="cart-container">
-          <List
+        {list}
+          {/* <List
             header={<h2>Products Selected</h2>}
             footer={
               <div>
@@ -53,7 +72,7 @@ const Cart = () => {
                 <Typography.Text mark></Typography.Text> {item}
               </List.Item>
             )}
-          />
+          /> */}
         </div>
       </div>
     </>
