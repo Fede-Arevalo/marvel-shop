@@ -1,3 +1,5 @@
+@import "../../colors.scss";
+
 .cart {
   // background-color: blue;
   width: 100%;
@@ -19,10 +21,10 @@
       // background-color: red;
       width: 100%;
       text-align: center;
-      h1{
+      h1 {
         font-size: 1rem;
       }
-      p{
+      p {
         font-size: 1.7rem;
         font-weight: 700;
       }
@@ -35,18 +37,24 @@
 }
 
 .ant-list-header {
-  width: 100%;  
-  color: #1677ff;
+  width: 100%;
+  color: $color1;
   display: flex;
- justify-content: center;
+  justify-content: center;
 }
 
 div.ant-list-footer {
-  width: 100%;  
+  width: 100%;
   display: flex;
- justify-content: center;
+  justify-content: center;
 
- Button {
-  margin: 10px;
- }
+  Button {
+    margin: 10px;
+  }
+}
+
+.empty-cart {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

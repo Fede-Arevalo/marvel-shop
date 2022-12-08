@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
-import { Divider } from "antd";
+import { Divider, List } from "antd";
 import "../Profile/Profile.scss";
+import Typography from "antd/es/typography/Typography";
 
 const Profile = () => {
   const { getUserWithOrderById, user } = useContext(UserContext);
@@ -17,20 +18,22 @@ const Profile = () => {
   const orders = user.Orders.map((order) => {
     return (
       <div className="order" key={order.id}>
-        Orden N° {order.id}
+        <span>Order N° {order.id}</span>
         {order.Products.map((product) => (
-
           <div className="product-profile-container" key={product.id}>
             <div className="img-product-profile">
-            <img
-              alt={product.name}
-              src={"http://localhost:8080/" + product.img_product}
-            />
+              <img
+                alt={product.name}
+                src={"http://localhost:8080/" + product.img_product}
+              />
             </div>
-            <h3>{product.name}</h3>
-            <p>{product.price}</p>
+            <div className="product-name">
+              <h3>{product.name}</h3>
+            </div>
+            <div className="product-price">
+              <p>{product.price} €</p>
+            </div>
           </div>
-          
         ))}
       </div>
     );
@@ -43,9 +46,24 @@ const Profile = () => {
       <Divider orientation="center">
         <h1>Profile</h1>
       </Divider>
-      <h2>{user.name}</h2>
+      <div className="profile">
+        <div className="profile-container">
+          <List
+            header={<h2>My orders</h2>}
+            footer={<p>Thanks for your purchase!</p>}
+            bordered
+            dataSource={orders}
+            renderItem={(item) => (
+              <List.Item>
+                <Typography.Text mark></Typography.Text> {item}
+              </List.Item>
+            )}
+          />
+        </div>
+      </div>
+      {/* <h2>{user.name}</h2>
       <p>{user.email}</p>
-      <div>{orders}</div>
+      <div>{orders}</div> */}
     </>
   );
 };
