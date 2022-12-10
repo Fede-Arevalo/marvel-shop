@@ -3,6 +3,7 @@ import { UserContext } from "../../context/UserContext/UserState";
 import { Divider, List } from "antd";
 import "../Profile/Profile.scss";
 import Typography from "antd/es/typography/Typography";
+import { UserOutlined, MailOutlined } from "@ant-design/icons";
 
 const Profile = () => {
   const { getUserWithOrderById, user } = useContext(UserContext);
@@ -46,10 +47,16 @@ const Profile = () => {
       <Divider orientation="center">
         <h1>Profile</h1>
       </Divider>
+      <div className="user-profile">
+        <UserOutlined style={{ color: "#1677ff", fontSize: "250%" }} />
+        <h2>Hi! {user.name}</h2>
+        <MailOutlined style={{ color: "#1677ff", fontSize: "150%" }}/>
+        <p>{user.email}</p>
+      </div>
       <div className="profile">
         <div className="profile-container">
           <List
-            header={<h2>My orders</h2>}
+            header={<h2>Your orders</h2>}
             footer={<p>Thanks for your purchase!</p>}
             bordered
             dataSource={orders}
@@ -61,9 +68,6 @@ const Profile = () => {
           />
         </div>
       </div>
-      {/* <h2>{user.name}</h2>
-      <p>{user.email}</p>
-      <div>{orders}</div> */}
     </>
   );
 };

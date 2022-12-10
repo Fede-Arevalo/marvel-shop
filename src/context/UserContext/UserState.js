@@ -24,7 +24,6 @@ export const UserProvider = ({ children }) => {
       payload: res.data,
     });
     if (res.data) {
-      console.log(res.data)
       localStorage.setItem("token", JSON.stringify(res.data.token));
     }
   };
@@ -76,8 +75,7 @@ export const UserProvider = ({ children }) => {
         logout,
         getUserWithOrderById,
         logout,
-        register
-
+        register,
       }}
     >
       {children}

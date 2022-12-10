@@ -16,29 +16,25 @@ const Products = () => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  
+
   const product = products.map((product) => {
     return (
       <div className="card" key={product.id}>
+        {console.log(product.Category)}
         <Card
           hoverable
           style={{
             width: 350,
-            height: 600,
-            
+            height: 450,
           }}
           cover={
-            <div className="img-product">
-              <img
-                alt={product.name}
-                src={"http://localhost:8080/" + product.img_product}
-              />
-            </div>
+            <img
+              alt={product.name}
+              src={"http://localhost:8080/" + product.img_product}
+            />
           }
         >
-        <div className="text-container">
-          <Meta title={product.name} description={product.description} />
-          </div>
+          <Meta title={product.name} description={product.Category.name} />
           <p className="price">{product.price.toFixed(2)} €</p>
           <Button type="primary" block onClick={() => addCart(product)}>
             Add Cart
@@ -50,7 +46,9 @@ const Products = () => {
 
   return (
     <>
-      <Divider orientation="center"><h1>Products</h1></Divider>
+      <Divider orientation="center">
+        <h1>Products</h1>
+      </Divider>
       <div className="products">
         <div className="products-container">{product}</div>
       </div>
