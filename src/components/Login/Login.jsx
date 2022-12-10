@@ -3,6 +3,7 @@ import { UserContext } from "../../context/UserContext/UserState";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
+import ModalRegis from "./Modal";
 import "../Login/Login.scss"
 
 const Login = () => {
@@ -71,7 +72,7 @@ const Login = () => {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in  
         </Button>
-        &nbsp;  Or  <span className="linkregi" onClick={ () => navigate("/createUser") }>Register now!</span>
+        <ModalRegis />
       </Form.Item>
     </Form>
     </div>

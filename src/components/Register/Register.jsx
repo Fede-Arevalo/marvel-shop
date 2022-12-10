@@ -5,7 +5,7 @@ import {
   Checkbox,
   Form,
   Input,
-  Select,
+  
 } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +45,6 @@ const Register = () => {
   const navigate = useNavigate()
   const [form] = Form.useForm();
   const onFinish = (values) => {
-    console.log('entras')
     register(values)
     navigate('/login')
   };
@@ -54,7 +53,7 @@ const Register = () => {
   return (
 
 <div className='formregister'>
-<h2>Welcome to Register</h2>
+<h2>Be Part of Us</h2>
     <Form
       {...formItemLayout}
       form={form}
