@@ -74,7 +74,6 @@ export const UserProvider = ({ children }) => {
         login,
         logout,
         getUserWithOrderById,
-        logout,
         register,
       }}
     >

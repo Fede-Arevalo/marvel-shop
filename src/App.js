@@ -23,6 +23,7 @@ function App() {
               <div className="header">
               <Header />
               </div>
+              <div className="container">
               <Routes>
               <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -30,7 +31,8 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/createUser" element={<Register />} />
-              </Routes>
+            </Routes>
+            </div>
             </ProductsProvider>
           </OrderProvider>
         </UserProvider>

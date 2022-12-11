@@ -1,13 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import '../Register/Register.scss'
 import {
   Button,
   Checkbox,
   Form,
   Input,
-  Select,
+  
 } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
+import { useNavigate } from 'react-router-dom';
 
 const formItemLayout = {
   labelCol: {
@@ -41,16 +42,18 @@ const tailFormItemLayout = {
 };
 const Register = () => {
   const { register } = useContext(UserContext);
+  const navigate = useNavigate()
   const [form] = Form.useForm();
   const onFinish = (values) => {
     register(values)
+    navigate('/login')
   };
   
 
   return (
 
 <div className='formregister'>
-<h2>Welcome to Register</h2>
+<h2>Be Part of Us</h2>
     <Form
       {...formItemLayout}
       form={form}
@@ -144,11 +147,11 @@ const Register = () => {
         {...tailFormItemLayout}
       >
         <Checkbox>
-          I have read the <a href="">agreement</a>
+          I have read the <a href="/">agreement</a>
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">
+        <Button  type="primary" htmlType="submit" >
           Register
         </Button>
       </Form.Item>
