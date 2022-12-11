@@ -17,8 +17,16 @@ const Cart = () => {
   const cartItem = cart.map((cartItem, i) => {
     return (
       <div className="cart-item" key={i}>
+        <div className="img-product-cart">
+          <img
+            alt={cartItem.name}
+            src={"http://localhost:8080/" + cartItem.img_product}
+          />
+        </div>
         <h1>{cartItem.name}</h1>
-        <p>{cartItem.price.toFixed(2)} €</p>
+        <div className="price-cart">
+          <p>{cartItem.price.toFixed(2)} €</p>
+        </div>
       </div>
     );
   });
@@ -42,7 +50,7 @@ const Cart = () => {
     <List
       header={<h2>Products Selected</h2>}
       footer={
-        <div>
+        <div className="buttons-cart">
           <Button onClick={() => clearCart()}>
             <ClearOutlined />
             Clear cart
@@ -68,9 +76,7 @@ const Cart = () => {
         <h1>Cart</h1>
       </Divider>
       <div className="cart">
-        <div className="cart-container">
-          {list}
-        </div>
+        <div className="cart-container">{list}</div>
       </div>
     </>
   );

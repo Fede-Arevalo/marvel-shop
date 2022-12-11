@@ -11,22 +11,39 @@
     // background-color: green;
     width: 70%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 50px;
-    gap: 20px;
 
     .cart-item {
       // background-color: red;
-      width: 100%;
-      text-align: center;
-      h1 {
-        font-size: 1rem;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      .img-product-cart {
+        width: 100px;
+        display: flex;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
       }
-      p {
-        font-size: 1.7rem;
-        font-weight: 700;
+
+      h1 {
+        font-size: 1.2em;
+      }
+
+      .price-cart {
+        display: flex;
+        flex-wrap: nowrap;
+        p {
+          font-size: 1.3em;
+          font-weight: 700;
+        }
       }
     }
 
@@ -43,7 +60,7 @@
   justify-content: center;
 }
 
-div.ant-list-footer {
+.buttons-cart {
   width: 100%;
   display: flex;
   justify-content: center;

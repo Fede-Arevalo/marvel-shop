@@ -20,7 +20,6 @@ const Products = () => {
   const product = products.map((product) => {
     return (
       <div className="card" key={product.id}>
-        {console.log(product.Category)}
         <Card
           hoverable
           style={{

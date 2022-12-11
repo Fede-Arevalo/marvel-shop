@@ -40,8 +40,6 @@ const Profile = () => {
     );
   });
 
-  console.log(user);
-
   return (
     <>
       <Divider orientation="center">
@@ -50,14 +48,14 @@ const Profile = () => {
       <div className="user-profile">
         <UserOutlined style={{ color: "#1677ff", fontSize: "250%" }} />
         <h2>Hi! {user.name}</h2>
-        <MailOutlined style={{ color: "#1677ff", fontSize: "150%" }}/>
+        <MailOutlined style={{ color: "#1677ff", fontSize: "150%" }} />
         <p>{user.email}</p>
       </div>
       <div className="profile">
         <div className="profile-container">
           <List
             header={<h2>Your orders</h2>}
-            footer={<p>Thanks for your purchase!</p>}
+            footer={<p>Thanks for your purchases!</p>}
             bordered
             dataSource={orders}
             renderItem={(item) => (
