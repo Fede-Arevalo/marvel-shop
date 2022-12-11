@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import '../Register/Register.scss'
 import {
   Button,
@@ -147,7 +147,7 @@ const Register = () => {
         {...tailFormItemLayout}
       >
         <Checkbox>
-          I have read the <a href="">agreement</a>
+          I have read the <a href="/">agreement</a>
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
