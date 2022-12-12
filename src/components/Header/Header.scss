@@ -8,7 +8,8 @@
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  min-height: 7vh;
+  min-height: 8vh;
+  
   .logo {
     height: 35px;
     width: auto;
@@ -16,8 +17,8 @@
   .anticon {
     color: $color3 !important;
   }
+  a:hover {
+    color: $color4 !important;
+  }
 }
 
-a:hover {
-  color: $color4 !important;
-}

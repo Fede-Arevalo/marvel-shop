@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Divider, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import ModalRegis from "./Modal";
 import "../Login/Login.scss";
@@ -22,7 +22,9 @@ const Login = () => {
 
   return (
     <div className="Login">
-      <h1>LOGIN</h1>
+     <Divider orientation="center">
+        <h1>LOGIN</h1>
+      </Divider>
 
       <Form
         name="normal_login"

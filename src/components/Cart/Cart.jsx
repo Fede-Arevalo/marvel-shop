@@ -39,7 +39,7 @@ const Cart = () => {
     return (
       <>
         <Divider orientation="center">
-          <h1>Cart</h1>
+          <h1>CART</h1>
         </Divider>
         <div className="empty-cart">No tienes ningún producto añadido</div>
       </>
@@ -73,7 +73,7 @@ const Cart = () => {
   return (
     <>
       <Divider orientation="center">
-        <h1>Cart</h1>
+        <h1>CART</h1>
       </Divider>
       <div className="cart">
         <div className="cart-container">{list}</div>

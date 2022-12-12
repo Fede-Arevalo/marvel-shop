@@ -20,7 +20,9 @@ const Products = () => {
 
   const product = products.map((product) => {
     return (
-      <div className="card" key={product.id}>
+        
+       <div className="card" key={product.id}>
+
         <Card
           hoverable
           style={{
@@ -50,11 +52,11 @@ const Products = () => {
 
   return (
     <>
-      <Divider orientation="center">
-        <h1>Products</h1>
-      </Divider>
       <div className="products">
-        <div className="products-container">{product}</div>
+      <Divider orientation="center">
+        <h1>PRODUCTS</h1>
+      </Divider> 
+        <div className="products-container">{product}</div>         
       </div>
     </>
   );
