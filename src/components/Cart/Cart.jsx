@@ -51,7 +51,7 @@ const Cart = () => {
       header={<h2>Products Selected</h2>}
       footer={
         <div className="buttons-cart">
-          <Button onClick={() => clearCart()}>
+          <Button type="primary" onClick={() => clearCart()}>
             <ClearOutlined />
             Clear cart
           </Button>

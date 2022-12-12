@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-
+import Logo from "../../assets/logo.png";
 import { Menu } from "antd";
 import {
   HomeOutlined,
@@ -22,6 +22,8 @@ const Header = () => {
   };
   return (
     <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
+      <img src={Logo} alt="Logo-Marvel" className="logo" />
+
       <Menu.Item key="home" icon={<HomeOutlined />}>
         <Link to="/">Home</Link>
       </Menu.Item>

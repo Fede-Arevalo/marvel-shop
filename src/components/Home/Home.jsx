@@ -1,5 +1,6 @@
+
 import React from 'react'
-import CarouselHome from './Carousel'
+import CarouselHome from '../Carousel/Carousel'
 
 
 const Home = () => {

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import '../Register/Register.scss'
 import {
   Button,
   Checkbox,
@@ -9,6 +8,7 @@ import {
 } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
 import { useNavigate } from 'react-router-dom';
+import '../Register/Register.scss'
 
 const formItemLayout = {
   labelCol: {
@@ -40,13 +40,15 @@ const tailFormItemLayout = {
     },
   },
 };
-const Register = () => {
+const Register = (props) => {
   const { register } = useContext(UserContext);
+
   const navigate = useNavigate()
   const [form] = Form.useForm();
   const onFinish = (values) => {
     register(values)
     navigate('/login')
+    props.setModal(false)
   };
   
 

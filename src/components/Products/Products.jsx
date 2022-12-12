@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import { Button, Card, Divider } from "antd";
 import "./Products.scss";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 
@@ -27,14 +28,18 @@ const Products = () => {
             height: 450,
           }}
           cover={
-            <img
-              alt={product.name}
-              src={"http://localhost:8080/" + product.img_product}
-            />
+            <Link to={"/getProductById/id/" + product.id}>
+              <center><img
+                alt={product.name}
+                src={"http://localhost:8080/" + product.img_product}
+              /></center>
+            </Link>
           }
         >
-          <Meta title={product.name} description={product.Category.name} />
-          <p className="price">{product.price.toFixed(2)} €</p>
+          <Link to={"/getProductById/id/" + product.id}>
+            <Meta title={product.name} description={product.Category.name} />
+            <p className="price">{product.price.toFixed(2)} €</p>
+          </Link>
           <Button type="primary" block onClick={() => addCart(product)}>
             Add Cart
           </Button>

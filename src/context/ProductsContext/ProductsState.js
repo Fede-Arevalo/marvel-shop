@@ -8,6 +8,7 @@ const cart = JSON.parse(localStorage.getItem("cart"));
 
 const initialState = {
   products: [],
+  product: {},
   cart: cart ? cart : [],
 };
 
@@ -27,6 +28,20 @@ export const ProductsProvider = ({ children }) => {
     return res;
   };
 
+  const getProductById = async (id) => {
+    try {
+      const res = await axios.get(
+        API_URL + "/products/getProductById/id/" + id
+      );
+      dispatch({
+        type: "GET_PRODUCT_BY_ID",
+        payload: res.data,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const addCart = (product) => {
     dispatch({
       type: "ADD_CART",
@@ -43,8 +58,10 @@ export const ProductsProvider = ({ children }) => {
   return (
     <ProductsContext.Provider
       value={{
+        product: state.product,
         products: state.products,
         cart: state.cart,
+        getProductById,
         getProducts,
         addCart,
         clearCart,

@@ -12,6 +12,7 @@ import Register from "./components/Register/Register";
 import { UserProvider } from "./context/UserContext/UserState";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
 import { OrderProvider } from "./context/OrderContext/OrderState";
+import Product from "./components/Product/Product";
 
 function App() {
   return (
@@ -21,18 +22,19 @@ function App() {
           <OrderProvider>
             <ProductsProvider>
               <div className="header">
-              <Header />
+                <Header />
               </div>
               <div className="container">
-              <Routes>
-              <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/createUser" element={<Register />} />
-            </Routes>
-            </div>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/createUser" element={<Register />} />
+                  <Route path="/getProductById/id/:id" element={<Product />} />
+                </Routes>
+              </div>
             </ProductsProvider>
           </OrderProvider>
         </UserProvider>

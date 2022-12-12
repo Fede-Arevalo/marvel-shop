@@ -4,7 +4,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import ModalRegis from "./Modal";
-import "../Login/Login.scss"
+import "../Login/Login.scss";
 
 const Login = () => {
   const { login } = useContext(UserContext);
@@ -18,67 +18,64 @@ const Login = () => {
     if (foundToken) {
       navigate("/profile");
     }
-  },[login,navigate]);
-
+  }, [login, navigate]);
 
   return (
-<div className="Login">
-  <h1>LOGIN</h1>
+    <div className="Login">
+      <h1>LOGIN</h1>
 
-    <Form
-      name="normal_login"
-      className="login-form"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-    >
-      <Form.Item
-        name="email"
-        rules={[
-          {
-            required: true,
-            message: "Please input your Email!",
-          },
-        ]}
+      <Form
+        name="normal_login"
+        className="login-form"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
       >
-        <Input
-          prefix={<UserOutlined className="site-form-item-icon" />}
-          placeholder="Email"
-        />
-      </Form.Item>
-      <Form.Item
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: "Please input your Password!",
-          },
-        ]}
-      >
-        <Input
-          prefix={<LockOutlined className="site-form-item-icon" />}
-          type="password"
-          placeholder="Password"
-        />
-      </Form.Item>
-      <Form.Item>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
+        <Form.Item
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: "Please input your Email!",
+            },
+          ]}
+        >
+          <Input
+            prefix={<UserOutlined className="site-form-item-icon" />}
+            placeholder="Email"
+          />
         </Form.Item>
-      </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your Password!",
+            },
+          ]}
+        >
+          <Input
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            type="password"
+            placeholder="Password"
+          />
+        </Form.Item>
+        <Form.Item>
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox className="check">Remember me</Checkbox>
+          </Form.Item>
+        </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in  
-        </Button>
-        <ModalRegis />
-      </Form.Item>
-    </Form>
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Log in
+          </Button>
+          <ModalRegis />
+        </Form.Item>
+      </Form>
     </div>
   );
-}
-    
-    
+};
 
 export default Login;

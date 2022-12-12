@@ -1,21 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
+@import "../../colors.scss";
 
+.Login {
+  font-family: "Marvel", sans-serif;
+  display: flex;
+  font-size: 25px;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  min-height: 85vh;
+  form {
+    .check {
+      color: white;
+    }
+  }
 
-.Login{
-
-font-family: 'Marvel', sans-serif;
-width: 70%;
-display: flex;
-font-size: 25px;
-flex-direction: column;
-
-
+  .anticon {
+    color: $color3 !important;
+  }
 }
 
-.linkregi{
+.ant-btn {
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  font-size: 15px;
+  align-items: baseline;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  margin: 5px;
+}
 
-    text-decoration: underline;
-    color:blue;
-    cursor:pointer
+.ant-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: $color3;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
 
+.ant-btn:hover::before {
+  width: 100%;
 }
