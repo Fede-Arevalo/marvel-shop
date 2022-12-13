@@ -9,7 +9,9 @@
   font-weight: 700;
   text-transform: uppercase;
   min-height: 8vh;
-  
+  padding-left: 20px;
+  padding-right: 20px;
+
   .logo {
     height: 35px;
     width: auto;
@@ -21,4 +23,5 @@
     color: $color4 !important;
   }
 }
+
 

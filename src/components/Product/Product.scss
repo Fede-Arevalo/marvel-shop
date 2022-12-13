@@ -11,6 +11,13 @@
 .ant-modal-body {
   // background-color: aqua;
 
+  .img-product-detail{
+    width: 100%;
+    img{
+      width:100%;
+    }
+  }
+
   span{
     color: $color1
   }

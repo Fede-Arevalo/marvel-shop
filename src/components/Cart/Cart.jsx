@@ -71,14 +71,14 @@ const Cart = () => {
   );
 
   return (
-    <>
+    <div className="bg-cart">
       <Divider orientation="center">
         <h1>CART</h1>
       </Divider>
       <div className="cart">
         <div className="cart-container">{list}</div>
       </div>
-    </>
+    </div>
   );
 };
 
