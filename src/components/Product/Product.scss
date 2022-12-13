@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,700&family=Fredoka:wght@300;400;500;600&display=swap");
+@import "../../colors.scss";
+
+.ant-modal-title {
+  font-family: Cabin;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  
+}
+
+.ant-modal-body {
+  // background-color: aqua;
+
+  span{
+    color: $color1
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $color4
+  }
+
+  .modal-price {
+    color: $color1;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}

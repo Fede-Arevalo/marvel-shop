@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router";
+import { Button, Modal } from "antd";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Product.scss";
 
 const Product = () => {
-  const { getProductById, product } = useContext(ProductsContext);
+  const { getProductById, product, addCart } = useContext(ProductsContext);
 
   const { id } = useParams();
 
@@ -13,24 +14,63 @@ const Product = () => {
     // eslint-disable-next-line
   }, []);
 
-  return (
-    <div>
-      <p>{product.Category?.name}</p>
-      <div className="img-product-detail">
-        {product.img_product ? (
-          <img
-            alt={product.name}
-            src={"http://localhost:8080/" + product.img_product}
-          />
-        ) : (
-          ""
-        )}
-      </div>
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(true);
 
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>{product.price}</p>
-    </div>
+  const handleOk = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      addCart(product);
+      setOpen(false);
+      navigate("/products");
+    }, 2000);
+  };
+
+  const navigate = useNavigate();
+
+  const handleCancel = () => {
+    setOpen(false);
+    navigate("/products");
+  };
+
+  return (
+    <>
+      <Modal
+        open={open}
+        title={product.name}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={[
+          <Button key="back" onClick={handleCancel}>
+            Back
+          </Button>,
+          <Button
+            key="submit"
+            type="primary"
+            loading={loading}
+            onClick={handleOk}
+          >
+            Add Cart
+          </Button>,
+        ]}
+      >
+        <span>{product.Category?.name}</span>
+        <div className="img-product-detail">
+          {product.img_product ? (
+            <img
+            key={product.id}
+              alt={product.name}
+              src={"http://localhost:8080/" + product.img_product}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+        <p>{product.description}</p>
+        <p className="modal-price">{product.price} €</p>
+      </Modal>
+    </>
   );
 };
 
